@@ -6,6 +6,8 @@
 #include "../devices/tetris.h"
 #elif DEVICE_lg8n
 #include "../devices/lg8n.h"
+#elif DEVICE_lg7n
+#include "../devices/lg7n.h"
 #else
 #error "Unknown device. Add your device to device_config.h"
 #endif

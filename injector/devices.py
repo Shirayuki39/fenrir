@@ -281,6 +281,24 @@ DEVICES = [
         'LG7n',
         'Tecno Pova 4',
         {
+#            'stage1': PayloadStage(
+#                'stage1',
+#                0xFFFF000050F23E94,
+#                0xFFFF000050F049D8,
+#                description='Pre-platform initialization stage',
+#            ),
+            'stage2': PayloadStage(
+                'stage2',
+                0xFFFF000050F1FCC8,
+                0xFFFF000050F0CCDC,
+                description='Pre-fastboot initialization stage',
+            ),
+            'stage3': PayloadStage(
+                'stage3',
+                0xFFFF000050F21018, # msdc_config_bus()
+                0xFFFF000050F0CCF8, # bl dprintf("%s:%d: Notify boot linux.\n")
+                description='Linux initialization stage',
+            ),
             'sec_get_vfy_policy': PatchStage(
                 'sec_get_vfy_policy',
                 pattern='00 01 00 b4 fd 7b bf a9',
