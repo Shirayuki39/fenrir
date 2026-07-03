@@ -491,6 +491,24 @@ DEVICES = [
         'S666LN',
         'itel RS4',
         {
+            'stage1': PayloadStage(
+                'stage1',
+                0xFFFF000050F26358,
+                0xFFFF000050F04A44,
+                description='Pre-platform initialization stage',
+            ),
+            'stage2': PayloadStage(
+                'stage2',
+                0xFFFF000050F222C8,
+                0xFFFF000050F0CEC0,
+                description='Pre-fastboot initialization stage',
+            ),
+            'stage3': PayloadStage(
+                'stage3',
+                0xFFFF000050F23618, # msdc_config_bus()
+                0xFFFF000050F0CE20, # bl dprintf("%s:%d: Notify boot linux.\n")
+                description='Linux initialization stage',
+            ),
             'sec_get_vfy_policy': PatchStage(
                 'sec_get_vfy_policy',
                 pattern='00 01 00 b4 fd 7b bf a9',

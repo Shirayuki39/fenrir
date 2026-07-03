@@ -8,6 +8,8 @@
 #include "../devices/q25.h"
 #elif DEVICE_lg8n
 #include "../devices/lg8n.h"
+#elif DEVICE_s666ln
+#include "../devices/s666ln.h"
 #else
 #error "Unknown device. Add your device to device_config.h"
 #endif
