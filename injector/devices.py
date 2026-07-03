@@ -309,6 +309,7 @@ DEVICES = [
                 description='Prevent LK from relocking seccfg',
             )
         },
+	cert_bypass=True
     ),
     Device(
         'LG7n',
